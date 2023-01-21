@@ -39,9 +39,11 @@ public class HttpClientService : IHttpClientService
         {
             var httpClient = _httpClientFactory.CreateClient();
             result = await httpClient.SendAsync(httpMessage);
+            Console.WriteLine($"{url} call - successfully performed");
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{url} call - caught exception");
             throw new BusinessException(ex.Message);
         }
 
@@ -72,9 +74,11 @@ public class HttpClientService : IHttpClientService
         {
             var httpClient = _httpClientFactory.CreateClient();
             result = await httpClient.SendAsync(httpMessage);
+            Console.WriteLine($"{url} call - successfully performed");
         }
         catch (Exception ex)
         {
+            Console.WriteLine($"{url} call - caught exception");
             throw new BusinessException(ex.Message);
         }
 
